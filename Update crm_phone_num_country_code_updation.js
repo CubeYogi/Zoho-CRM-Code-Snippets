@@ -29,7 +29,6 @@ if((phone  !=  null)  &&  (country  !=  null))
 {
 	//comparison to find the Phone extension Code on based on Lead Country
 	extension_code_to_add=data_set_extension_code.get(country);
-	
 	if(extension_code_to_add  !=  null)
 	{
 		// appending the Phone extension Code based on Lead Country
