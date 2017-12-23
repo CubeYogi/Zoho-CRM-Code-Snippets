@@ -31,11 +31,14 @@ if(invoiceID != null)
 	}
 	xml_data = xml_data + "</Products>";
 	/*STEP 9: Map formation to store the Zoho CRM authtoken and other info*/
+	/**** NOTE: Please replace the 'Your ZOHO CRM AUHTOKEN' by the Zoho CRM Authtoken 
+	Refer this Link: https://www.zoho.com/crm/help/api/using-authentication-token.html
+	to get your CRM account Authoken ***/
 	products_info.put("authtoken",YOUR ZOHO CRM AUTHTOKEN);
 	products_info.put("scope","crmapi");
 	products_info.put("relatedModule","Products");
 	products_info.put("id",crm_account_id);
 	products_info.put("xmlData",xml_data);
 	/*STEP 10: API call to update the Product Info into the Zoho CRM Accounts*/
-	url = postUrl("https://crm.zoho.com/crm/private/xml/Accounts/updateRelatedRecords",products_info);
+	update_accounts = postUrl("https://crm.zoho.com/crm/private/xml/Accounts/updateRelatedRecords",products_info);
 }
