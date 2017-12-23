@@ -55,7 +55,7 @@ if(input.contact_id != null && input.contact_id > 0)
 	deal_record_fields_map=map();
 	deal_record_fields_map.put("Potential Name",contact_name);
 	deal_record_fields_map.put("SMOWNERID",ifnull(contact_details_response.get("SMOWNERID"),""));
-	deal_record_fields_map.put("CONTACTID",input,contact_id);
+	deal_record_fields_map.put("CONTACTID",input.contact_id);
 	deal_record_fields_map.put("Account Name",ifnull(contact_details_response.get("Account Name"),""));
 	deal_record_fields_map.put("Title",ifnull(contact_details_response.get("Title"),""));
 	deal_record_fields_map.put("Email",ifnull(contact_details_response.get("Email"),""));
