@@ -16,6 +16,7 @@ if(invoiceID != null)
 	/*STEP 5: XML Formation to send the Product info to Zoho CRM */
 	products_info = Map();
 	xml_data = "<Products>";
+	row_Val = 1;
 	/*STEP 6: Loop to get all the Line Item Products */
 	for each  item_id in line_item_response
 	{
@@ -24,7 +25,6 @@ if(invoiceID != null)
 		product_details = zoho.books.getRecordsByID("Items",organizationID,item_response);
 		item_res = product_details.getJson("item");
 		product_ID = item_res.getJSON("zcrm_product_id");
-		row_Val = 1;
 		/*STEP 7.A: XML Formation to send the Product info to Zoho CRM */
 		xml_data = xml_data + "<row no = \"" + row_Val + "\"><FL val =\"PRODUCTID\" >" + product_ID + "</FL></row>";
 		row_Val = row_Val + 1;
